@@ -1,32 +1,22 @@
-import './App.css';
-import Row from "./components/Row"
-import Banner from "./components/Banner"
-import Nav from "./components/Nav"
-import { categories } from './api';
+import { Home } from './pages/Home/Home'
+import  Login  from './pages/Login/Login';
+
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
 
-
   return (
-    <div className="App">
-      {/* Navbar */}
-      {/* destaque */}
-      {/* Em alta */}
-
-      <Nav></Nav>
-      <Banner></Banner>
-
-      {categories.map( (category) => {
-        return <Row 
-                  key={category.name} 
-                  title={category.title} 
-                  path={category.path}
-                  isLarge={category.isLarge}
-                 />
-      } )}
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+

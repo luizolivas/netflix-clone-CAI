@@ -1,7 +1,4 @@
-.App {
+html {
   background-color: #111;
-}
-
-* {
-  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
